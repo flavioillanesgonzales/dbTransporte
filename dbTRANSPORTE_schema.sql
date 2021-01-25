@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS dbtransporte;
 CREATE DATABASE dbTransporte;
-USE sakila;
+USE dbTransporte;
 
 CREATE TABLE BOLETA (
     CODBOL char(7),
@@ -25,6 +25,8 @@ CREATE TABLE CLIENTE (
     NOMCLI varchar(50),
     APECLI varchar(50),
     DNICLI char(8),
+    FNCLI date,
+    SEXCLI CHAR(1),
     CORCLI varchar(50),
     CELCLI char(9),
     CODUBI char(6),
@@ -37,11 +39,14 @@ CREATE TABLE CONDUCTOR (
     NOMCON varchar(50),
     APECON varchar(50),
     DNICON char(8),
+	FNCON date,
+    SEXCON CHAR(1),
+    CORCON varchar(50),
     CELCON char(9),
     CODUBI char(6),
     CODPUES char(3),
     SUECON int,
-    ESTVEN char(1),
+    ESTCON char(1),
     CONSTRAINT CONDUCTOR_pk PRIMARY KEY (IDCON)
 ) COMMENT 'Información del encargado del bus.';
 
@@ -87,6 +92,9 @@ CREATE TABLE VENDEDOR (
     NOMVEN varchar(50),
     APEVEN varchar(50),
     DNIVEN char(8),
+    FNVEN date,
+    SEXVEN CHAR(1),
+    CORVEN VARCHAR(50),
     CELVEN char(9),
     CODUBI char(6),
     CODPUES char(3),
