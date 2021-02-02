@@ -9,7 +9,7 @@ CREATE TABLE BOLETA (
     IDVEN int ,
     PREBOL int,
     NUMASI char(2) NOT NULL,
-    CODDES char(3) NOT NULL,
+    CODDES int,
     CONSTRAINT BOLETA_pk PRIMARY KEY (CODBOL)
 );
 
@@ -48,10 +48,10 @@ CREATE TABLE CONDUCTOR (
     SUECON int,
     ESTCON char(1),
     CONSTRAINT CONDUCTOR_pk PRIMARY KEY (IDCON)
-) COMMENT 'Información del encargado del bus.';
+);
 
 CREATE TABLE DESTINO (
-    CODDES char(3),
+    CODDES int auto_increment,
     NOMSAL varchar(50),
     NOMLLE varchar(50),
     CONSTRAINT DESTINO_pk PRIMARY KEY (CODDES)
